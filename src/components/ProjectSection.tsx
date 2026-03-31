@@ -18,7 +18,7 @@ const ProjectSection = () => {
 
         {/* Cinematic Project Card */}
         <motion.a
-          href="https://inaibrimovie.com"
+          href="https://inaibromovie.com"
           target="_blank"
           rel="noopener noreferrer"
           initial={{ opacity: 0, y: 40 }}
@@ -39,7 +39,7 @@ const ProjectSection = () => {
                 <div>
                   <p className="font-mono text-primary text-xs tracking-[0.2em] uppercase mb-2">🎬 Streaming Platform</p>
                   <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-                    Inaibrimovie.com
+                    Inaibromovie.com
                   </h3>
                   <p className="text-muted-foreground max-w-xl text-base lg:text-lg">
                     A cinematic streaming platform bringing African stories to the world. 

@@ -33,7 +33,7 @@ const AboutSection = () => {
             <p className="text-muted-foreground text-base lg:text-lg leading-relaxed max-w-2xl mx-auto">
               At just 20 years old, he bridges two worlds: the rich cultural 
               tapestry of East Africa and the cutting edge of modern technology. As the 
-              Founder & CEO of Inaibrimovie.com, he is building the infrastructure for 
+              Founder & CEO of Inaibromovie.com, he is building the infrastructure for 
               African cinema to reach a global audience — one line of code at a time.
             </p>
 
