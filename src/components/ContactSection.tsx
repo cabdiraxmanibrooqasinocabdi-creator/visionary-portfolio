@@ -5,7 +5,6 @@ import { toast } from "sonner";
 
 const ContactSection = () => {
   const [copied, setCopied] = useState(false);
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const email = "cabdiraxmanibrooqasinocabdi@gmail.com";
 
   const handleCopy = () => {
@@ -13,12 +12,6 @@ const ContactSection = () => {
     setCopied(true);
     toast.success("Email copied to clipboard!");
     setTimeout(() => setCopied(false), 2000);
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast.success("Message sent! I'll get back to you soon.");
-    setFormData({ name: "", email: "", message: "" });
   };
 
   return (
@@ -36,13 +29,11 @@ const ContactSection = () => {
             <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold">Contact</h2>
           </motion.div>
 
-          {/* Email Copy */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mb-12"
           >
             <button
               onClick={handleCopy}
@@ -58,49 +49,6 @@ const ContactSection = () => {
               )}
             </button>
           </motion.div>
-
-          {/* Form */}
-          <motion.form
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            onSubmit={handleSubmit}
-            className="space-y-5"
-          >
-            <div className="grid sm:grid-cols-2 gap-5">
-              <input
-                type="text"
-                placeholder="Name"
-                required
-                value={formData.name}
-                onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-                className="w-full bg-card border border-border rounded-xl px-5 py-3.5 text-sm font-sans text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                required
-                value={formData.email}
-                onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                className="w-full bg-card border border-border rounded-xl px-5 py-3.5 text-sm font-sans text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
-              />
-            </div>
-            <textarea
-              placeholder="Message"
-              rows={5}
-              required
-              value={formData.message}
-              onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
-              className="w-full bg-card border border-border rounded-xl px-5 py-3.5 text-sm font-sans text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none"
-            />
-            <button
-              type="submit"
-              className="w-full bg-primary text-primary-foreground rounded-xl px-8 py-4 font-sans font-medium text-sm tracking-wide btn-liquid hover:shadow-lg hover:shadow-primary/20 transition-shadow duration-300"
-            >
-              Send Message
-            </button>
-          </motion.form>
         </div>
       </div>
     </section>
